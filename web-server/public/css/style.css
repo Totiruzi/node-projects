@@ -1,0 +1,15 @@
+header {
+  color:rgb(75,267,53);
+  font-size: 35px;
+  text-align: center;
+}
+img {
+  width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+p {
+  font-size: 18px;
+  color: chocolate;
+}
