@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="/img/weather.png">
+  <link rel="stylesheet" href="/css/style.css">
   <title>About</title>
 </head>
+
 <body>
-  <header>{{title}}</header>
-  <img src="/img/blackPanther.jpg"/>
+  <div class="main-content">
+    {{>header}}
+    <img src="/img/blackPanther.jpg" class="portrait" />
+    <p>{{name}}</p>
+  </div>
+  {{>footer}}
 </body>
+
 </html>
