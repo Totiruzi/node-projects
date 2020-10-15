@@ -1,19 +1,29 @@
 console.log('JavaScript for the clientside');
 
-const url = 'http://localhost:3001/weather?address=krasnodar';
-
 // fetch('http://puzzle.mead.io/puzzle').then((respond) => {
 //   respond.json().then((data) => {
 //     console.log(data);
 //   });
 // });
 
-fetch(url).then((res) => {
-  res.json().then((data) => {
-    if(data.error) {
-      return console.log(data.error)
-    }
-    console.log(data)
-    console.log(` location: ${data.address} \n ${data.weatherForecast}`);
+const weatherForm = document.querySelector('form');
+const inputSearch = document.querySelector('input');
+const messageOne = document.querySelector('#message-1');
+const messageTwo = document.querySelector('#message-2');
+
+weatherForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const address = inputSearch.value;
+  const url = `http://localhost:3001/weather?address=${address}`;
+  messageOne.textContent = 'Loading.....';
+  messageTwo.textContent = '';
+
+  fetch(url).then((res) => {
+    res.json().then((data) => {
+      if (data.error) {
+        return (messageOne.textContent = data.error);
+      }
+      messageTwo.textContent = ` location: ${data.address} ${data.weatherForecast}`;
+    });
   });
 });

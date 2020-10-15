@@ -17,12 +17,12 @@ footer {
 }
 
 header {
-  color:rgb(75,267,53);
+  color: rgb(75, 267, 53);
   margin-top: 16px;
   margin-bottom: 48px;
 }
 
-h1{
+h1 {
   font-size: 64px;
   margin-bottom: 16px;
 }
@@ -38,4 +38,16 @@ header a {
 }
 .main-content {
   flex-grow: 1;
+}
+input {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #888;
+  background: #888;
+  color: white;
+  padding: 8px;
 }
