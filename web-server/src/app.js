@@ -5,7 +5,7 @@ const { geocode } = require('./utils/geocode');
 const { weatherForcast } = require('./utils/weather_request');
 
 const app = express();
-
+const port = process.env.PORT || 3001
 // Define paths for Express config
 const publicPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -99,6 +99,6 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3001, () => {
-  console.log('Server running on port 3001');
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
