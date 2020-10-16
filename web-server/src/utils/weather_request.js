@@ -8,11 +8,11 @@ const weatherForcast = (lat, lon, callback) => {
     } else if (res.body.error) {
       callback('Unable to find location 2', undefined);
     } else {
-      const { precip, temperature, weather_descriptions } = res.body.current;
+      const { precip, temperature, weather_descriptions, feelslike, humidity } = res.body.current;
       const data = res.body;
       callback(
         undefined,
-        `It is currently ${weather_descriptions[0]} with a temperature of  ${temperature} degree celsius in ${data.location.name} and a ${precip}% of rain.`
+        `It is currently ${weather_descriptions[0]} with a temperature of  ${temperature} degree celsius in ${data.location.name} and a ${precip}% of rain. It feels like ${feelslike} degress out. The humidity is ${humidity} %.`
       );
     }
   });
